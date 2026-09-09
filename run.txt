@@ -1,0 +1,14 @@
+cd .\backend\venv\Scripts\  
+./Activate.ps1
+cd ../../
+python app.py
+python ingest.py
+python web_ingest.py
+
+
+cd .\frontend\
+
+
+
+ollama list
+ollama run llama3.2:3b
