@@ -30,6 +30,7 @@ import {
   MapPinned,
   X,
   LogOut,
+  Menu,
 } from "lucide-react";
 import assistantIcon from "./assets/logo.png";
 import userIcon from "./assets/you.png";
@@ -71,6 +72,8 @@ export default function App() {
   const [accountOpen, setAccountOpen] = useState(false);
 
   const [campusMapOpen, setCampusMapOpen] = useState(false);
+
+  const [mobilePanelsOpen, setMobilePanelsOpen] = useState(false);
 
   const [openSources, setOpenSources] = useState({});
 
@@ -753,6 +756,14 @@ export default function App() {
     }));
   };
 
+  const toggleMobilePanels = () => {
+    setMobilePanelsOpen((previous) => !previous);
+  };
+
+  const closeMobilePanels = () => {
+    setMobilePanelsOpen(false);
+  };
+
 
   // =========================================================
   // CLEAR CHAT
@@ -869,7 +880,7 @@ export default function App() {
 
   return (
 
-    <div className="app">
+    <div className={`app ${mobilePanelsOpen ? "mobile-panels-open" : ""}`}>
 
 
       {/* =====================================================
@@ -1016,22 +1027,36 @@ export default function App() {
 
         <header className="topbar">
 
-          <div>
+          <div className="topbar-left">
 
-            <div className="online">
+            <button
+              className="mobile-menu-button"
+              type="button"
+              onClick={toggleMobilePanels}
+              aria-label={mobilePanelsOpen ? "Close side sections" : "Open side sections"}
+              aria-expanded={mobilePanelsOpen}
+            >
+              {mobilePanelsOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
 
-              <span className="status-dot"></span>
+            <div>
 
-              University Assistant
+              <div className="online">
+
+                <span className="status-dot"></span>
+
+                University Assistant
+
+              </div>
+
+
+              <span className="subtitle">
+
+                Official knowledge-base powered chatbot
+
+              </span>
 
             </div>
-
-
-            <span className="subtitle">
-
-              Official knowledge-base powered chatbot
-
-            </span>
 
           </div>
 
@@ -1065,7 +1090,7 @@ export default function App() {
             CHAT
         =================================================== */}
 
-        <section className="chat">
+        <section className="chat" onClick={closeMobilePanels}>
 
 
           {/* HERO */}
