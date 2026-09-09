@@ -1,0 +1,29 @@
+Flask
+flask-cors
+requests
+chromadb
+sentence-transformers
+PyMuPDF
+beautifulsoup4
+python-dotenv
+faster-whisper
+pymongo
+
+# LangChain / RAG
+langchain
+langchain-community
+langchain-chroma
+
+# Embeddings
+sentence-transformers
+huggingface-hub
+
+# PDF ingestion
+pypdf
+
+# Production server
+gunicorn
+
+# Numerical / ML dependencies
+numpy<2
+
