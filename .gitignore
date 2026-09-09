@@ -1,36 +1,25 @@
-# Dependencies
-node_modules/
-frontend/node_modules/
-backend/venv/
+# Virtual environment
 venv/
-
-# Build
-dist/
-frontend/dist/
-build/
-
-# Environment
-.env
-.env.*
-!.env.example
+.venv/
+node_modules
 
 # Python cache
 __pycache__/
 *.pyc
 
-# ChromaDB / Vector database
-vector_db/
+# Environment variables
+.env
 
-# Large ML models
-*.h5
-*.keras
-*.pt
-*.pth
-*.onnx
+# IDE files
+.vscode/
+.idea/
 
 # Logs
 *.log
 
-# OS
+# Database
+*.db
+
+# OS files
 .DS_Store
 Thumbs.db
